@@ -1,10 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  var burger = sequelize.define("Burger", {
-    id:{
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
+  var burgers = sequelize.define("Burger", {
     burger_name: {
       type: DataTypes.STRING,
       validate: {
@@ -17,18 +13,6 @@ module.exports = function(sequelize, DataTypes) {
     }},{
       freezeTableName: true
   });
-  return burger;
+  return burgers;
 };
 
-Burger.create({
-  burger_name: "Cheese Burger",
-  devoured: false
-});
-Burger.create({
-  burger_name: "Hamburger",
-  devoured: false
-});
-Burger.create({
-  burger_name: "Pizza Burger",
-  devoured: false
-});
